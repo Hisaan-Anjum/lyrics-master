@@ -15,8 +15,9 @@
   <p></p>
   
   
-  
+  <% if user_signed_in?%>
   <%= link_to 'New Song', new_lyric_path , class:"btn btn-primary", style:"background-color:orange"%>
+  <% end %>
 <br></br>
     <% @lyrics.each do |lyric| %>
       <div class="panel panel-default" >
