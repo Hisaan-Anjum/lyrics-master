@@ -1,0 +1,56 @@
+
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+<div class='header-bg'>
+    <div class="container">
+<%= render 'pages/header1'%>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+<div class='text-center'>
+    <h26 style="color:#ffdf00;font-size:70px"> Lyrics master</h26>
+    <p></p>
+    <% if  user_signed_in? %>
+        <%= link_to  "Logout", destroy_user_session_path,class:"btn btn-primary btn-lg" , style:"background-color:#ffdf00;border-color:#ffdf00", method: :delete%>
+                    <%= link_to  "Lyrics Page (Index)",lyrics_path,class:"btn btn-primary btn-lg" , style:"background: rgba(255,255,255,0.7);color:#ffdf00  ;font-weight:bold;border-color:#ffdf00" %>
+
+       <% else %>
+ <%= link_to  "Login",new_user_session_path, class:"btn btn-primary btn-lg", style:"background-color:#ffdf00;border-color:#ffdf00"%>
+    <%= link_to  "Signup",new_user_registration_path,class:"btn btn-primary btn-lg" , style:"background: rgba(255,255,255,0.7);color:#ffdf00  ;font-weight:bold;border-color:#ffdf00" %>
+     <%= link_to  "Lyrics Page (Index)",lyrics_path, class:"btn btn-primary btn-lg", style:"background-color:#ffdf00;border-color:#ffdf00"%>
+
+    <% end %>
+
+    </div>
+</div>
+</div>
+<br></br>
+<br></br>
+<div class="container">
+    <div class="container">
+        <div class="jumbotron" style="background-color:white;border-color:#ffdf00;border-style:solid">
+            <b><h27 style="font-size:30px;color:#ffdf00">Music sounds good but I can't really make up what he's saying. You have come to the right place. A webiste where people can upload and find lyrics of a variety songs.</h27></b>
+            </div>
+</div>
+    </div>
+    
+    <div class="header-gg">
+        </div>
+        <br></br>
+        <br></br>
+        <div class="container">
+    <div class="container">
+        <div class="jumbotron" style="background-color:white;border-color:#ffdf00;border-style:solid ">
+            <b><h27 style="font-size:30px;color:#ffdf00">Music expresses that which cannot be put into words and that which cannot be silent</h27></b>
+            <div class="text-right">
+            <p25 ALIGN="right" style="font-size:30px;color:#ffdf00" >-H</p25>
+            </div>
+            </div>
+</div>
+    </div>
+    
+    <div class="header-hg">
+        </div>
+        

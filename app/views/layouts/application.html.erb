@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% if current_page?(root_path) %>
+  <% else %>
+<%= render 'layouts/header'%>
+<% end %>
+<%= yield %>
+<div class="footer" style="background-color:orange;height:100px">
+            <br></br>
+            <div class="text-center">
+            <h26 style="font-size:30px">Copyright© Muhammad Hisaan Anjum Qadri</h26>
+            </div>
+            </div>
+</body>
+</html>

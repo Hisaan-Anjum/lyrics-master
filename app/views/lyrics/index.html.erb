@@ -1,0 +1,46 @@
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+<div class="container">
+  <h1>Songs</h1>
+   <p><b><u><span style="background-color:#ffff00">Note:-</span></b></u><span style="background-color:#ffff00">Either type in the artist name or the song name don't type in both at the same time</span></p></span> 
+
+  <%= form_tag(lyrics_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Songs" , class:"form-control"%>
+  <p> </p>
+  <div class="text-center">
+  <%= button_tag(type: "submit", class: "btn btn-primary" , :name => nil ) do %>
+    <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
+  <% end %>
+  <% end %>
+  <p></p>
+  
+  
+  
+  <%= link_to 'New Song', new_lyric_path , class:"btn btn-primary", style:"background-color:orange"%>
+<br></br>
+    <% @lyrics.each do |lyric| %>
+      <div class="panel panel-default" >
+        <%= link_to lyric do%>
+        <div class="panel-heading" style="background-color:orange">
+          <div class="text-center">
+          <h26 style="font-size:25px;color:white">Artist: <%= lyric.artist %></h26>
+          <p></p>
+        <b><h27 style="color:white;font-size:27px"><%= lyric.name %></h27></b>
+        </div>
+        </div>
+        <div class="panel-body">
+        <p25 style="font-size:22px"><%= lyric.description %></p25>
+        </div>
+        <% end %>
+        <div class="panel-footer" style="background-color:#ffdf00"> 
+          <% if current_user && (lyric.user == current_user)%>
+        <%= link_to 'Edit', edit_lyric_path(lyric) , class:"btn btn-primary", style:"background-color:black"%>
+        <%= link_to 'Destroy', lyric, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-primary" , style:"background-color:black"%>
+        <% end %>
+        </div>
+        </div>
+    <br> </br>
+    <% end %>
+
+
+</div>

@@ -1,0 +1,39 @@
+<div class="text-center">
+
+<% if user_signed_in?%>
+<% if @lyric.user_id == current_user.id%>
+<%= link_to 'Edit', edit_lyric_path(@lyric) , class:"btn btn-primary"%> |
+<% end %>
+<% end %>
+<%= link_to 'Back', lyrics_path , class:"btn btn-primary"%>
+</div>
+<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<p>
+  <div class="text-center">
+<h26 style="font-size:30px"><%= @lyric.artist %></h26>
+<br></br>
+  <h26 style="font-size:15px">"<%= @lyric.name %>"</h26>
+</p>
+</div>
+
+
+
+  <div class="text-center">
+  <%= simple_format(@lyric.lyrics) %>
+  
+  </div>
+</p>
+<div class="text-center">
+<p>THANKS TO: <%= @lyric.user.try(:email)%> for posting the lyrics</p>
+
+</div>
+
+  <% if @youtube_id == "none"%>
+<p> Youtube video unavailable. </p>
+<% else %>
+<div class="embed-container">  
+
+  <%= embed(@lyric.youtube_link) %>
+  </div>
+<% end %>
